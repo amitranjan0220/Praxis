@@ -1,0 +1,16 @@
+{% extends 'student_base.html'%}
+{% load static %}
+{% block title %}Homework{% endblock %}
+{% block header %}All Homework{% endblock %}
+
+{% block content %}
+<br><br><br>
+{% for list in list %}
+<div class="container">
+  <p>{{ list.class_class }}/{{list.class_subject}}</p>
+  <p>{{ list.message }}</p>
+  {{ text }}
+  <span class="time-right">{{ list.created_at}}</span>
+</div>
+{% endfor%}
+{% endblock %}

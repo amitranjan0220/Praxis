@@ -1,0 +1,17 @@
+{% extends 'school_base.html' %}
+{% block title %}Homework Home{% endblock %}
+{% block header %}Homework Home{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+      <tr>
+        <td><a href="{% url 'school_homework_create' %}">Create Homework</a></td><br>
+      </tr>
+      <tr>
+          <td><a href="{% url 'school_homework_all' %}">All Homework</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

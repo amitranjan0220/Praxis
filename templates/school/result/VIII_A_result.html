@@ -1,0 +1,105 @@
+{% extends 'school_base.html'%}
+{% block title %}Result{% endblock %}
+{% block header %}Result{% endblock %}
+{% block content %}
+<br><br><br>
+<style media="screen">
+  .edit{
+    color: red;
+  }
+</style>
+  <div class="table-box">
+    <a class="time-right edit" href="{% url 'VIII_A_result_edit' list.id %}">Edit</a>
+    <p>Class: {{ list.classroom }}</p>
+    <p>Exam: {{ list.exam }}</p>
+    <p>Name: {{ list.student.user.first_name}} {{ list.student.user.last_name}}</p>
+
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Totak Marks</th>
+        <th>Viva</th>
+        <th>Viva M.M </th>
+        <th>Home Work</th>
+        <th>Home Work M.M </th>
+      </tr>
+      <tr>
+        <td>{{ list.sub_one }}</td>
+        <td>{{ list.sub_one_mark}}</td>
+        <td>{{ list.sub_one_tmark}}</td>
+        <td>{{ list.sub_one_viva }}</td>
+        <td>{{ list.sub_one_tviva }}</td>
+        <td>{{ list.sub_one_home }}</td>
+        <td>{{ list.sub_one_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_two }}</td>
+        <td>{{ list.sub_two_mark}}</td>
+        <td>{{ list.sub_two_tmark}}</td>
+        <td>{{ list.sub_two_viva }}</td>
+        <td>{{ list.sub_two_tviva }}</td>
+        <td>{{ list.sub_two_home }}</td>
+        <td>{{ list.sub_two_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_three }}</td>
+        <td>{{ list.sub_three_mark}}</td>
+        <td>{{ list.sub_three_tmark}}</td>
+        <td>{{ list.sub_three_viva }}</td>
+        <td>{{ list.sub_three_tviva }}</td>
+        <td>{{ list.sub_three_home }}</td>
+        <td>{{ list.sub_three_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_four }}</td>
+        <td>{{ list.sub_four_mark}}</td>
+        <td>{{ list.sub_four_tmark}}</td>
+        <td>{{ list.sub_four_viva }}</td>
+        <td>{{ list.sub_four_tviva }}</td>
+        <td>{{ list.sub_four_home }}</td>
+        <td>{{ list.sub_four_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_five }}</td>
+        <td>{{ list.sub_five_mark}}</td>
+        <td>{{ list.sub_five_tmark}}</td>
+        <td>{{ list.sub_five_viva }}</td>
+        <td>{{ list.sub_five_tviva }}</td>
+        <td>{{ list.sub_five_home }}</td>
+        <td>{{ list.sub_five_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_six }}</td>
+        <td>{{ list.sub_six_mark}}</td>
+        <td>{{ list.sub_six_tmark}}</td>
+        <td>{{ list.sub_six_viva }}</td>
+        <td>{{ list.sub_six_tviva }}</td>
+        <td>{{ list.sub_six_home }}</td>
+        <td>{{ list.sub_six_thome }}</td>
+      </tr>
+      <tr>
+        <td>{{ list.sub_seven }}</td>
+        <td>{{ list.sub_seven_mark}}</td>
+        <td>{{ list.sub_seven_tmark}}</td>
+        <td>{{ list.sub_seven_viva }}</td>
+        <td>{{ list.sub_seven_tviva }}</td>
+        <td>{{ list.sub_seven_home }}</td>
+        <td>{{ list.sub_seven_thome }}</td>
+      </tr>
+    </table><br>
+    <table>
+      <tr>
+        <th>Total Obtain Marks</th>
+        <th>Total Marks</th>
+        <th>Percentage</th>
+      </tr>
+      <tr>
+        <td>{{ list.obtain_marks }}</td>
+        <td>{{ list.total_marks }}</td>
+        <td>{{ list.percent }}</td>
+      </tr>
+    </table>
+  </div>
+  </div><br>
+{% endblock %}

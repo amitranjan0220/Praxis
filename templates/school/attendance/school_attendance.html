@@ -1,0 +1,18 @@
+{% extends 'school_base.html' %}
+{% block header %}Attendence{% endblock %}
+{% block title %}Attendence{% endblock %}
+{% block content %}
+
+<br><br><br>
+<div class="table-box">
+  <table>
+      <tr>
+        <td><a href="{% url 'download_option' %}">View/Download Attendance</a></td><br>
+      </tr>
+      <tr>
+          <td><a href="{% url 'take_attendance' %}">Take Attendance</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

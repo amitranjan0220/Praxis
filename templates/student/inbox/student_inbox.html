@@ -1,0 +1,14 @@
+{% extends 'student_base.html' %}
+{% block title %}My Inbox{% endblock %}
+{% block header %}My Inbox{% endblock %}
+{% block content %}
+<br><br><br>
+{% for list in list %}
+<div class="container">
+    <!-- <a class="time-right" href="#">delete</a> -->
+    <p>{{ list.msg }}</p>
+    <span class="time-right">{{ list.created_at}}</span>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

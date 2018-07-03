@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Index{% endblock %}
+{% block content %}
+
+<div class="login-box">
+  <div class="login-box__login center">
+    <div class="login-box__logo ">
+        <!-- <img src="{% static 'icons/logo1.png'%}" alt="logo"><br> -->
+    </div>
+    <a href="{% url 'login' %}">Login</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'school_base.html'%}
+{% load static %}
+{% block title %}Deposit Fees{% endblock %}
+{% block header %}Deposit Fees{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+ <form method="post" id="personForm" data-cities-url="{% url 'ajax_load_student' %}" novalidate>
+  {% csrf_token %}
+  {{form.as_p}}<br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_classroom").change(function () {
+      var url = $("#personForm").attr("data-cities-url");
+      var classroom = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'classroom': classroom
+        },
+        success: function (data) {
+          $("#id_student").html(data);
+        }
+      });
+
+    });
+  </script>
+
+{% endblock %}

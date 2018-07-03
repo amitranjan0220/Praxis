@@ -1,0 +1,15 @@
+{% extends 'school_base.html' %}
+{% block header %}Report{% endblock %}
+{% block title %}Report{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p}}<br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+{% endblock %}

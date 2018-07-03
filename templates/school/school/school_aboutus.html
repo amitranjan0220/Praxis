@@ -1,0 +1,26 @@
+{% extends 'school_base.html' %}
+{% block title %}About Us{% endblock %}
+{% block header %}About Us{% endblock %}
+{% block content %}
+<br>
+<div class="aboutus-container">
+  <div class="aboutus-container_director">
+  <h4>Director</h4><br>
+   <img src="{{ user1.profile.photo.url}}" class="w3-round-small w3-left" alt="Norway">
+   <p><b>{{ user1.get_full_name | upper }}</b></p>
+   <br>
+    <div class="desc">"I would like to welcome everyone to Praxis Vidyapeeth.We believe in
+      educating the whole child focusing on academic, social and emotional growth.
+      Education is a partnership between the school and the home and we are
+      fully vested in partnering with families to make sure each child reaches their
+      full potential. "</div>
+</div>
+<br><br>
+<h4>Our Teacher</h4><br>
+{% for user in user %}
+<img src="{{ user.profile.photo.url}}"alt="Avatar" class="avatar">
+<h4>{{ user.get_full_name }}</h4>
+<br>
+{% endfor %}
+</div>
+{% endblock %}

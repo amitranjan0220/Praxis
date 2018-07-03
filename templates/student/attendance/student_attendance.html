@@ -1,0 +1,24 @@
+{% extends 'student_base.html' %}
+{% block title %}My Attendance{% endblock %}
+{% block header %}My Attendance{% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+    {% for list in list %}
+    <tr>
+      <td>{{ list.created_at|date:"d/M"}}</td>
+      <td>{{ list.atten }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+
+
+{% endblock %}

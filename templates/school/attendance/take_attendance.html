@@ -1,0 +1,23 @@
+{% extends 'school_base.html' %}
+{% block header %}Attendence{% endblock %}
+{% block title %}Attendence{% endblock %}
+{% block content %}
+<br><br>
+<div class="table-box">
+<h4>List of Classroom</h4>
+<table>
+  <tr>
+    <td><a href="{% url 'VI' %}">Class VI</a></td>
+  </tr>
+  <tr>
+    <td><a href="{% url 'VII' %}">Class VII</a></td>
+  </tr>
+  <tr>
+    <td><a href="{% url 'VIII_A' %}">Class VIII-A</a></td>
+  </tr>
+  <tr>
+    <td><a href="{% url 'VIII_B' %}">Class VIII-B</a></td>
+  </tr>
+<br>
+</div>
+{% endblock %}

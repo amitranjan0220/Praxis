@@ -1,0 +1,29 @@
+{% extends 'school_base.html' %}
+{% block header %}Class-XII{% endblock %}
+{% block title %}Class-XII{% endblock %}
+{% block content %}
+<br><br><br>
+</style>
+<div class="table-box">
+<form method="POST">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <th>Roll No.</th>
+      <th>Name</th>
+      <th>Absent</th>
+      <th>Present</th>
+    </tr>
+    {% for i in stu %}
+    <tr>
+      <td>{{ i.roll_no}}</td>
+      <td>{{ i.user.first_name|capfirst}} {{ i.user.last_name|capfirst }}</td>
+      <td><input type="radio" name="{{ i.user.username}}" id="{{ i.id }}" value="absent"></td>
+      <td><input type="radio" name="{{ i.user.username}}" id="{{ i.id }}" value="present"></td>
+    </tr>
+    {% endfor %}
+  </table><br>
+   <input type="submit" value="Submit">
+ </div>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'school_base.html'%}
+{% block title %}Fees Detail{% endblock %}
+{% block header %}Fees Detail{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <p>Name: {{ user.get_full_name}}</p>
+  <p>class: {{ user.profile.classroom }}</p>
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Time</th>
+    <th>Amount</th>
+  </tr>
+  {% for list in list %}
+  <tr>
+    <td>{{ list.month }}</td>
+    <td> {{ list.deposit_at }}</td>
+    <td>{{ list.amount }} Rs</td>
+  </tr>
+  {% endfor %}
+</table>
+</div><br>
+
+{% endblock %}

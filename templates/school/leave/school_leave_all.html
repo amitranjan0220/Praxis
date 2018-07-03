@@ -1,0 +1,15 @@
+{% extends 'school_base.html'%}
+{% block title %} All Leave {% endblock %}
+{% block header %} All Leave{% endblock %}
+{% load static %}
+{% block content %}
+<br><br><br>
+{% for list in list %}
+<div class="container">
+  <a href={% url 'school_leave_single' list.id %} class="time-right">Open</a>
+  <p>{{ list.sender }}</p>
+  <span class="time-right">{{ list.created_at}}</span>
+
+</div>
+{% endfor%}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'school_base.html'%}
+{% block title %}TimeTable{% endblock %}
+{% block header %}TimeTable{% endblock %}
+{% block content %}
+<style media="screen">
+  .edit{
+    color: red;
+  }
+  .heading{
+    background-color: pink;
+  }
+</style>
+<div class="timetable-box">
+{% for list in list %}
+{% if request.user.username ==  'admin' %}
+<div class="">
+    <a class="time-right edit" href={% url 'school_timetable_delete' list.id %}>{{ list.classroom }}-delete</a>
+  </div>
+{% endif %}
+<table>
+  <h2>Timetabel of class:{{ list.classroom }}</h4>
+  <tr class="heading">
+    <th>Time</th>
+    <th>{{list.time_1}}</th>
+    <th>{{list.time_2}}</th>
+    <th>{{list.time_3}}</th>
+    <th>{{list.time_4}}</th>
+    <th>{{list.time_5}}</th>
+    <th>{{list.time_6}}</th>
+    <th>{{list.time_7}}</th>
+    <th>{{list.time_8}}</th>
+  </tr>
+  <tr>
+    <th>Mon</th>
+    <th>{{list.subject_1}}</th>
+    <th>{{list.subject_2}}</th>
+    <th>{{list.subject_3}}</th>
+    <th>{{list.subject_4}}</th>
+    <th>{{list.subject_5}}</th>
+    <th>{{list.subject_6}}</th>
+    <th>{{list.subject_7}}</th>
+    <th>{{list.subject_8}}</th>
+  </tr>
+  <tr>
+    <th>Tue</th>
+    <th>{{list.subject_9}}</th>
+    <th>{{list.subject_10}}</th>
+    <th>{{list.subject_11}}</th>
+    <th>{{list.subject_12}}</th>
+    <th>{{list.subject_13}}</th>
+    <th>{{list.subject_14}}</th>
+    <th>{{list.subject_15}}</th>
+    <th>{{list.subject_16}}</th>
+  </tr>
+  <tr>
+    <th>Wed</th>
+    <th>{{list.subject_17}}</th>
+    <th>{{list.subject_18}}</th>
+    <th>{{list.subject_19}}</th>
+    <th>{{list.subject_20}}</th>
+    <th>{{list.subject_21}}</th>
+    <th>{{list.subject_22}}</th>
+    <th>{{list.subject_23}}</th>
+    <th>{{list.subject_24}}</th>
+  </tr>
+  <tr>
+    <th>Thr</th>
+    <th>{{list.subject_25}}</th>
+    <th>{{list.subject_26}}</th>
+    <th>{{list.subject_27}}</th>
+    <th>{{list.subject_28}}</th>
+    <th>{{list.subject_29}}</th>
+    <th>{{list.subject_30}}</th>
+    <th>{{list.subject_31}}</th>
+    <th>{{list.subject_32}}</th>
+  </tr>
+  <tr>
+    <th>Fri</th>
+    <th>{{list.subject_33}}</th>
+    <th>{{list.subject_34}}</th>
+    <th>{{list.subject_35}}</th>
+    <th>{{list.subject_36}}</th>
+    <th>{{list.subject_37}}</th>
+    <th>{{list.subject_38}}</th>
+    <th>{{list.subject_39}}</th>
+    <th>{{list.subject_40}}</th>
+  </tr>
+  <tr>
+    <th>Sat</th>
+    <th>{{list.subject_41}}</th>
+    <th>{{list.subject_42}}</th>
+    <th>{{list.subject_43}}</th>
+    <th>{{list.subject_44}}</th>
+    <th>{{list.subject_45}}</th>
+    <th>{{list.subject_46}}</th>
+    <th>{{list.subject_47}}</th>
+    <th>{{list.subject_48}}</th>
+  </tr>
+</table><br>
+
+{% endfor %}
+<br><br>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'school_base.html' %}
+{% block title %}TimeTable{% endblock %}
+{% block header %}TimeTable{% endblock %}
+{% block content %}
+
+<br><br><br>
+<div class="exam-box">
+  <table>
+    <h4>{{ list.exam.classroom}} -{{ list.exam.name }}</h4>
+    <tr>
+      <th>TimeTable </th>
+    </tr>
+    <tr>
+      <td>{{ list.day_one }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_two }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_three }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_four }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_five }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_six }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_seven }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_eight }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_eleven }}</td>
+    </tr>
+    <tr>
+      <td>{{ list.day_twelve }}</td>
+    </tr>
+  </table>
+</div>
+
+{% endblock %}

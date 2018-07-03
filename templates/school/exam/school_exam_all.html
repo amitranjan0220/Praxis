@@ -1,0 +1,17 @@
+{% extends 'school_base.html' %}
+{% block title %}Exam{% endblock %}
+{% block header %}Exam{% endblock %}
+{% block content %}
+<br><br><br>
+{% for exam in exam %}
+<div class="container">
+  <!-- <a class="time-right" href="{% url 'exam_delete' exam.id %}">delete</a> -->
+Class:{{ exam.classroom }}<br>
+Exam-Name:{{ exam.name }}<br>
+Start Date:{{ exam.start_date }}<br>
+End_Date:{{ exam.end_date }}
+<a href="{% url 'exam_single_timetable' exam.id %}"><h4>Timetable</h4></a>
+</div>
+<br>
+{% endfor %}
+{% endblock %}

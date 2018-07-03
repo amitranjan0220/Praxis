@@ -1,0 +1,20 @@
+{% extends 'school_base.html'%}
+{% block title %}Create Result -VIII-A{% endblock %}
+{% block header %}Create Result - VIII-A{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="table-box">
+      <table>
+        {{ form }}
+      </table><br>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+{% endblock %}

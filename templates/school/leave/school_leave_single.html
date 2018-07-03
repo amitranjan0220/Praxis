@@ -1,0 +1,18 @@
+{% extends 'school_base.html'%}
+{% block title %}Leave{% endblock %}
+{% block header %}Leave{% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="leave-box">
+  <div class="leave">
+    To:<br>
+    {{ list.to }}<br><br>
+    Subject:<br>{{list.subject}}<br><br>
+    Letter:<br>{{ list.letter}}<br><br>
+    From:<br>
+    {{ list.sender }}<br>
+    Date:{{ list.created_at}}
+  </div>
+</div>
+{% endblock %}

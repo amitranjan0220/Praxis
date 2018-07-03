@@ -1,0 +1,19 @@
+{% extends 'school_base.html' %}
+{% block title %}Notice Home{% endblock %}
+{% block header %}Notice Home{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    {% if request.user.username == 'admin' %}
+      <tr>
+        <td><a href="{% url 'school_notice_create' %}">Create Notice</a></td><br>
+      </tr>
+    {% endif %}
+      <tr>
+          <td><a href="{% url 'school_notice_all' %}">All Notice</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

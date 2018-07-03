@@ -1,0 +1,17 @@
+{% extends 'school_base.html' %}
+{% block header %}Options{% endblock %}
+{% block title %}Options{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+      <tr>
+        <td><a href="{% url 'attendance_report'%}">By Day</a></td><br>
+      </tr>
+      <tr>
+          <td><a href="{% url 'attendance_report_month' %}">By Month</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

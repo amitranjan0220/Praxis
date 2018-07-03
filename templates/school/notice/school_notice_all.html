@@ -1,0 +1,21 @@
+{% extends 'school_base.html'%}
+{% load static %}
+{% block title %}All Notice{% endblock %}
+{% block header %}All Notice{% endblock %}
+
+{% block content %}
+<br><br><br>
+{% for list in list %}
+<div class="container">
+  <div class="notice">
+    {% if request.user.username ==  'admin' %}
+    <a class="time-right" href={% url 'school_notice_delete' list.id %}>delete</a>
+    {% endif %}
+    <p><b>{{ list.title }}</b></p>
+    <p>{{ list.message }}</p>
+    <span class="time-right">{{ list.created_at}}</span>
+  </div>
+</div>
+{% endfor%}
+<br>
+{% endblock %}

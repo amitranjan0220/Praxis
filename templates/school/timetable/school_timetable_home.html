@@ -1,0 +1,19 @@
+{% extends 'school_base.html' %}
+{% block title %}Timetable Home{% endblock %}
+{% block header %}Timetable Home{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    {% if request.user.username == 'admin' %}
+      <tr>
+        <td><a href="{% url 'school_timetable_create' %}">Create Timetable</a></td><br>
+      </tr>
+    {% endif %}
+      <tr>
+          <td><a href="{% url 'school_timetable_all' %}">All Timetable</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

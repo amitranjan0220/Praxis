@@ -1,0 +1,22 @@
+{% extends 'school_base.html'%}
+{% load static%}
+{% block title %}Events{% endblock %}
+{% block header %}Events{% endblock %}
+
+{% block content %}
+<br><br><br>
+{% for list in list %}
+<div class="event-box">
+  <div class="event-box__date">
+    {{ list.start_date|date:"d/M"}}
+  </div>
+  <div class="event-box__message">
+    {{ list.message }}
+    {% if request.user.username == 'Praxis' %}
+      <a class="time-right" href={% url 'school_event_delete' list.id %}>delete</a>
+      {% endif %}
+  </div>
+</div><br>
+{% endfor%}
+
+{% endblock %}

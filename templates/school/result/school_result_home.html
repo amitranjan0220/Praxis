@@ -1,0 +1,32 @@
+{% extends 'school_base.html' %}
+{% block header %}Result{% endblock %}
+{% block title %}Result{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    <tr>
+      <th>Create Result</th>
+      <th>View Result</th>
+    </tr>
+      <tr>
+        <td><a href="{% url 'class_VI' %}">Class VI</a></td>
+          <td><a href="{% url 'VI_result_search' %}">View</a></td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'class_VII' %}">Class VII</a></td>
+          <td><a href="{% url 'VII_result_search' %}">View</a></td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'class_VIII_A' %}">Class VIII_A</a></td>
+          <td><a href="{% url 'VIII_A_result_search' %}">View</a></td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'class_VIII_B' %}">Class VIII_B</a></td>
+          <td><a href="{% url 'VIII_B_result_search' %}">View</a></td>
+      </tr>
+  </table>
+  <br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'student_base.html' %}
+{% block title %}Exam-List{% endblock %}
+{% block header %}Exam-List{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+<h4> List of Exam</h4><br>
+<table>
+  <tr>
+    <th>Exam</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Result</th>
+  </tr>
+  {% for list in list %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ list.start_date}}</td>
+    <td>{{ list.end_date}}</td>
+<td><a href="{% url 'student_result' list.id %}">Result</a></td>
+  </tr>
+{% endfor %}
+{% endblock %}
+</div>

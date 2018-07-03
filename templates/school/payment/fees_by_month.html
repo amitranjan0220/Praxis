@@ -1,0 +1,15 @@
+{% extends 'school_base.html'%}
+{% block title %}Seaech by Month{% endblock %}
+{% block header %}Search by Month{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+ <form method="post">
+  {% csrf_token %}
+  {{form.as_p}}<br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
+{% endblock %}

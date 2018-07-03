@@ -1,0 +1,20 @@
+{% extends 'school_base.html' %}
+{% block title %}List of class{% endblock %}
+{% block header %}List of class{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    {% for list in list %}
+    <tr>
+      <td><a href="{% url 'student_per_class' list.id %}">View List of class {{ list.classname}}</a>
+    <div class="table-box__space">
+      OR
+    </div><a href="{% url 'list_download' list.id %}">Download List</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+</div>
+
+{% endblock %}

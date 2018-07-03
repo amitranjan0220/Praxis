@@ -1,0 +1,103 @@
+{% extends 'school_base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block header %}Home{% endblock %}
+{% block content %}
+  <div class="home">
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 6</div>
+      <img src="{% static 'images/image-1.jpg' %}">
+      <div class="text">School</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 6</div>
+      <img src="{% static 'images/image-2.jpg' %}">
+      <div class="text">Guest</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 6</div>
+      <img src="{% static 'images/image-3.jpg' %}">
+      <div class="text">Assembly Area</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 6</div>
+      <img src="{% static 'images/image-4.jpg' %}">
+      <div class="text">Doubt Clearance</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 6</div>
+      <img src="{% static 'images/image-5.jpg' %}">
+      <div class="text">Exhibition</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 6</div>
+      <img src="{% static 'images/image-6.jpg' %}">
+      <div class="text">Night Class</div>
+    </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-container__about">
+      <a href="{% url 'school_aboutus' %}">About Us</a>
+      </div>
+      <div class="flex-container__contact">
+        <a href="{% url 'school_contactus'%}">Contact Us</a>
+      </div>
+    </div>
+    <div class="update-box">
+      <blockquote class="update-box__box">
+        <h4>News Update</h4>
+      <p class="small">Addmissions are now open.<br>
+        Please collect the addmission form from the office
+      </p>
+    </blockquote>
+    </div>
+    <!-- <div class="update-box">
+      <blockquote class="update-box__box">
+        <h4>Announcement</h4>
+      <p class="small">
+      We are happy to anounce that our new branch is open in Rudhauli
+      </p>
+    </blockquote>
+    </div> -->
+  </div>
+  <script type="text/javascript">
+
+  var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+
+  </script>
+{% endblock %}

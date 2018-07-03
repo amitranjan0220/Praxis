@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+{% block content %}
+
+<div class="login-box">
+  <div class="login-box__login center">
+  <h1>Check Network or Login again</h1><br><br>
+    <a href="{% url 'login' %}">LoginAgain</a>
+  </div>
+</div>
+{% endblock %}

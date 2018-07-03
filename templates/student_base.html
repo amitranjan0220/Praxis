@@ -1,0 +1,104 @@
+{% load static %}
+{% load webpush_notifications %}
+{% load notification_tags %}
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="manifest" href="{% static 'manifest.json' %}">
+      <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="school">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-57x57' %}" sizes="57x57">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-60x60' %}" sizes="60x60">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-72x72' %}" sizes="72x72">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-76x76' %}" sizes="76x76">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-114x114' %}" sizes="114x114">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-120x120' %}" sizes="120x120">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-144x144' %}" sizes="144x144">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-153x152' %}" sizes="152x152">
+      <link rel="apple-touch-icon" href="{% static 'icons/apple-icon-180x180' %}" sizes="180x180">
+      <meta name="msapplication-TileImage" content="{% static 'icons/app-icon-144x144.png' %}">
+      <meta name="msapplication-TileColor" content="#ff9966">
+      <meta name="theme-color" content="#00a2a9">
+      <title>{% block title %}{% endblock %}</title>
+      {% webpush %}
+    </head>
+<body>
+  <header>
+    <div class="header">
+      <nav>
+        <div id="mySidenav" class="header__sidenav">
+          <div class="header__sidenav-profile">
+              <a href="javascript:void(0)" class="closebtn " onclick="closeNav()"><i class="header__topnav-icon-close ion-ios-close-outline"></i></a>
+             <img  src="{{ user.profile.photo.url}}" alt="avatar">
+              <h1>Hi! {{ user.get_full_name }}</h1>
+          </div>
+          <div class="header__sidenav-section">
+            <a href="{% url 'student_home' %}"><i class="ion-ios-home"></i>Home</a>
+            <a href="{% url 'student_profile' %}"><i class="ion-person"></i>My Profile</a>
+            <a href="{% url 'student_attendance' %}"><i class="ion-ios-compose"></i>My Attendance</a>
+          </div>
+          <div class="header__sidenav-subsection">
+            <a id="inbox" href="{% url 'student_inbox' %}"><i class="ion-android-mail"></i>Inbox<span>{% notification %}</span></a>
+            <a href="{% url 'student_notice' %}"><i class="ion-android-notifications"></i>Notice</a>
+            <a href="{% url 'student_homework' %}"><i class="ion-android-clipboard"></i>Homework</a>
+            <a href="{% url 'student_timetable' %}"><i class="ion-calendar"></i>Timetable</a>
+            <a href="{% url 'student_event' %}"><i class="ion-android-calendar"></i>Events</a>
+            <a href="{% url 'student_leave' %}"><i class="ion-android-create"></i>Leave</a>
+            <a href="{% url 'student_exam' %}"><i class="ion-ios-paper"></i>Exam</a>
+            <a href="{% url 'student_exam_list' %}"><i class="ion-university"></i>Result</a>
+            <!-- <a href="{% url 'student_gallery' %}"><i class="ion-image"></i>Gallery</a> -->
+            <a href="{% url 'student_grievance' %}"><i class="ion-speakerphone"></i>Grievance</a>
+            <a href="{% url 'logout' %}"><i class="ion-power"></i>Logout</a>
+            {% if request.user.webpush_info.count == 0 %}
+                {% webpush_button %}
+              {% else %}
+              <div class="">
+                  <p></p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+      <div class="header__topnav">
+        <a href="# " onclick="openNav()"><i class="header__topnav-icon-menu ion-android-menu"></i></a>
+        <a href="#" class="header__topnav-home">{% block header %}{% endblock %}</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+
+    {% endblock %}
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+  </main>
+<script src="{% static 'js/myscript.js' %}"></script>
+<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js"%}"></script>
+<script type="text/javascript">
+$(function(){
+    $("#inbox").click(function(event){
+        url = '/school/reset_inbox/';
+        $.get(url);
+    });
+});
+
+</script>
+</body>
+</html>

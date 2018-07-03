@@ -1,0 +1,22 @@
+{% extends 'school_base.html' %}
+{% block title %}Exam Home{% endblock %}
+{% block header %}Exam Home{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    {% if request.user.username == 'admin' %}
+      <tr>
+        <td><a href="{% url 'school_exam_create' %}">Create Exam</a></td><br>
+      </tr>
+      <tr>
+          <td><a href="{% url 'school_exam_timetable' %}">Create Exam TimeTable</a></td>
+      </tr>
+    {% endif %}  
+      <tr>
+          <td><a href="{% url 'school_exam_all' %}">All Exam</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

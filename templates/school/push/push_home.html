@@ -1,0 +1,12 @@
+{% extends 'school_base.html' %}
+{% block title %}Notification{% endblock %}
+{% block header %}Notification{% endblock %}
+{% block content %}
+<div class="form-attendance">
+  <form method="post">
+    {{ form.as_p}}
+    {% csrf_token %}<br>
+    <input type="submit" name="" value="Send">
+  </form>
+</div>
+{% endblock %}

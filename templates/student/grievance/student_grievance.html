@@ -1,0 +1,31 @@
+{% extends 'student_base.html' %}
+{% block title %}Grievance{% endblock %}
+{% block header %}Grievance{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Message</label>
+      </div>
+      <div class="col-75">
+      {{ form.message }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Sender</label>
+      </div>
+      <div class="col-75">
+      {{ form.sender }}
+      </div>
+    </div><br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+{% endblock %}

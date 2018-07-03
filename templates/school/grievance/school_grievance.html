@@ -1,0 +1,15 @@
+{% extends 'school_base.html' %}
+{% block title %}Grievance{% endblock %}
+{% block header %}Grievance{% endblock %}
+{% block content %}
+<br><br>
+{% for list in list %}
+<div class="container">
+    <a class="time-right" href={% url 'school_grievance_delete' list.id %}>delete</a>
+  <p>{{ list.message }}</p>
+  <p>{{ list.sender }}</p>
+  <p>User Name:{{ list.username }}</p>
+  <span class="time-right">{{ list.created_at}}</span>
+</div>
+{% endfor%}
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1>Praxis Vidyapeeth
+          <br><span>(Shiv Colony,Basti U.P)</span>
+          <br><span>(Invoice)</span>
+        </h1>
+        <p>Name: {{ user.get_full_name |upper}}</p>
+        <p>Roll No.: {{ user.profile.roll_no}}</p>
+        <p>Class: {{ user.profile.classroom }}</p>
+
+    <div class="table-box">
+      <table>
+        <tr>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Status</th>
+      </tr>
+        {% for payment in payment %}
+        <tr>
+          <td>{{ payment.amount }}.0 Rs</td>
+          <td>{{ payment.deposit_at}}</td>
+          <td>{{ payment.month }}</td>
+          <td>Paid</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    </div><br>
+      <p><span class="right">Signature & Seal of Accountant</span></p>
+  </body>
+</html>

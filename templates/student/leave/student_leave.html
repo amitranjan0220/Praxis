@@ -1,0 +1,46 @@
+{% extends 'student_base.html'%}
+{% block title %}Leave{% endblock%}
+{% block header %}Leave{% endblock%}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="POST">
+         {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">To,</label>
+      </div>
+      <div class="col-75">
+        {{ form.to}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+      <label for="lname">Subject</label>
+      </div>
+      <div class="col-75">
+      {{ form.subject}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+      <label for="lname">Letter</label>
+      </div>
+      <div class="col-75">
+      {{form.letter}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+      <label for="lname">Sender</label>
+      </div>
+      <div class="col-75">
+    {{ form.sender}}
+      </div>
+    </div><br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+{% endblock %}

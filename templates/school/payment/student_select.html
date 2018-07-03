@@ -1,0 +1,22 @@
+{% extends 'school_base.html'%}
+{% load static %}
+{% block title %}Student Profile{% endblock %}
+{% block header %}Student Profile{% endblock %}
+{% block content %}
+<div class="card-box">
+    <div class="card-box__profile">
+         <img  src="{{list.profile.photo.url}}">
+    <div class="card-box__details"><br>
+        <ul>
+            <li> Name:-{{ list.first_name}}{{ list.last_name}}</li>
+            <li>Date of Birth:-{{ list.profile.birth_date }}</li>
+            <li> Gender:-{{ list.profile.gender}}</li>
+            <li>Class:-{{ list.profile.classroom}}</li>
+            <li> Phone:-{{ list.profile.phone}}<br></li>
+            <li>Address:-{{ list.profile.address }}</li>
+          </ul>
+    </div>
+   </div>
+    <a href="{% url 'payment_form' list.id %}"><button type="button" name="button">Confirm</button></a>
+</div>
+{% endblock %}

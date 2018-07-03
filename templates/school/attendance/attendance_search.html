@@ -1,0 +1,24 @@
+{% extends 'school_base.html' %}
+{% block header %}{{ class }}-Attendence{% endblock %}
+{% block title %}Attendence{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Roll No.</th>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+  {% for list in list %}
+  <tr>
+    <td>{{ list.created_at|date:"d/M"}}</td>
+    <td>{{ list.student.roll_no }}</td>
+    <td> {{ list }}</td>
+    <td>{{ list.atten }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

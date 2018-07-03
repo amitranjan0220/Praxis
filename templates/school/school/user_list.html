@@ -1,0 +1,55 @@
+{% extends 'school_base.html' %}
+{% block title %}Search{% endblock %}
+{% block header %}Search{% endblock %}
+{% block content %}
+<br><br>
+<div class="form-attendance">
+  <form method="get">
+    {{ filter.form.as_p }}<br>
+    <input type="submit" name="" value="Submit">
+  </form><br>
+</div><br><br><br>
+  <div class="table-box">
+      <table>
+          <thead>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Status</th>
+                <th>Block</th>
+                <th>Unblock</th>
+                <th>Info</th>
+                <th>Password</th>
+            </tr>
+          </thead>
+          {% for user in filter.qs %}
+            {% if user.id > 1  %}
+          <tbody>
+            <tr>
+              <td>{{ user.get_full_name }}</td>
+              <td>{{ user.profile.classroom }}</td>
+              {% if user.is_active == False %}
+              <td>Blocked</td>
+              {% else %}
+              <td>Active</td>
+              {% endif %}
+              <td>
+                  <a href={% url 'student_block' user.id %}>Block</a>
+              </td>
+              <td>
+                  <a href={% url 'student_unblock' user.id %}>Unblock</a>
+              </td>
+              <td>
+                  <a href={% url 'school_student' user.id %}>Info</a>
+              </td>
+              <td>
+                  <a href={% url 'reset_password' user.id %}>Reset</a>
+              </td>
+            </tr>
+          </tbody>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <br>
+{% endblock %}

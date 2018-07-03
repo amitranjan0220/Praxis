@@ -1,0 +1,24 @@
+{% extends 'school_base.html'%}
+{% block title %}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+    </th>
+  {% for payment in pay %}
+  <tr>
+    <td>{{ payment.user.get_full_name }}</td>
+    <td>{{ payment.amount }}</td>
+    <td>{{ payment.deposit_at}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

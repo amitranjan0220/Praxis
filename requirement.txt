@@ -1,0 +1,5 @@
+django==1.11
+django-webpush
+WeasyPrint==0.42.3
+Pillow==5.1.0
+django-filter==1.1.0

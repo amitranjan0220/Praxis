@@ -1,0 +1,15 @@
+{% extends "school_base.html" %}
+{% load static %}
+{% block title %}Gallery{% endblock %}
+{% block header %}Gallery{% endblock %}
+{% block content %}
+<div class="gallery">
+  <div class="gallery__image">
+    <a target="_blank" href="img_fjords.jpg">
+      <img src="{% static 'images/image-1.jpg' %}" alt="Trolltunga Norway" width="300" height="200">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+{% endblock %}

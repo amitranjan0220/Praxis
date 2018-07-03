@@ -1,0 +1,32 @@
+{% extends 'school_base.html'%}
+{% block title %}Create Homework{% endblock %}
+{% block header %}Create Homework{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Class</label>
+      </div>
+    {{ form.class_class }}
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Subject</label>
+      </div>
+    {{form.class_subject}}
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Message</label>
+      </div>
+    {{form.message}}
+  </div><br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'school_base.html'%}
+{% block title %}Manage Fees{% endblock %}
+{% block header %}Manage Fees{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    <tr>
+      <td><a href="{% url 'school_student_search' %}">Check Fees of Student</a></td><br>
+    </tr>
+    <tr>
+        <td><a href="{% url 'school_search_by_month' %}">Check Fees by Month</a></td>
+    </tr>
+  </table>
+</div>
+
+{% endblock %}

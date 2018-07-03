@@ -1,0 +1,48 @@
+
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.container{
+  border-radius: 5px;
+  padding: 10px;
+}
+span{
+  font-size: 15px;
+  margin: 0 auto;
+}
+  table {
+      width:100%;
+      border-spacing:0;
+      border-collapse: collapse;
+      margin:20px 0;
+  }
+
+  table th, table td {
+      text-align:left;
+      font-size:14px;
+      padding:10px;
+      margin:0;
+      border-style: solid;
+      border-width: thin;
+      border-color: green;
+  }
+  h1{
+    text-align: center;
+  color: green;
+  }
+  p{
+    font-size: 15px;
+  }
+
+.right{
+  float: right;
+}

@@ -1,0 +1,19 @@
+{% extends 'school_base.html' %}
+{% block title %}Event Home{% endblock %}
+{% block header %}Event Home{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    {% if request.user.username == 'admin' %}
+      <tr>
+        <td><a href="{% url 'school_event_create' %}">Create Event</a></td><br>
+      </tr>
+      {% endif %}
+      <tr>
+          <td><a href="{% url 'school_event_all' %}">All Event</a></td>
+      </tr>
+  </table>
+</div>
+
+{% endblock %}

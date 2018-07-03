@@ -1,0 +1,179 @@
+{% extends 'school_base.html' %}
+{% block title %}Create TimeTable{% endblock%}
+{% block header %}Create TimeTable{% endblock%}
+{% block content %}
+<br><br><br>
+<div class="form-attendance">
+  <form method="post">
+  {% csrf_token %}
+  <div class="row">
+       <div class="col-25">
+         <label for="fname">Class</label>
+       </div>
+       <div class="col-75">
+        {{ form.classroom }}
+       </div>
+     </div>
+                 <div class="row">
+                      <div class="col-25">
+                        <label for="fname">Time1</label>
+                      </div>
+                      <div class="col-75">
+                      {{ form.time_1 }}
+                      </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-25">
+                           <label for="fname">Time2</label>
+                         </div>
+                         <div class="col-75">
+                         {{ form.time_2 }}
+                         </div>
+                       </div>
+                       <div class="row">
+                            <div class="col-25">
+                              <label for="fname">Time3</label>
+                            </div>
+                            <div class="col-75">
+                            {{ form.time_3 }}
+                            </div>
+                          </div>
+                          <div class="row">
+                               <div class="col-25">
+                                 <label for="fname">Time4</label>
+                               </div>
+                               <div class="col-75">
+                               {{ form.time_4 }}
+                               </div>
+                             </div>
+                             <div class="row">
+                                  <div class="col-25">
+                                    <label for="fname">Time5</label>
+                                  </div>
+                                  <div class="col-75">
+                                  {{ form.time_5 }}
+                                  </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-25">
+                                       <label for="fname">Time6</label>
+                                     </div>
+                                     <div class="col-75">
+                                     {{ form.time_6 }}
+                                     </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-25">
+                                          <label for="fname">Time7</label>
+                                        </div>
+                                        <div class="col-75">
+                                        {{ form.time_7 }}
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                           <div class="col-25">
+                                             <label for="fname">Time8</label>
+                                           </div>
+                                           <div class="col-75">
+                                           {{ form.time_8 }}
+                                           </div>
+                                         </div>
+                                         <hr>
+     <div class="row">
+       <div class="col-25">
+        <label for="fname">Monday</label>
+          </div>
+        <div class="col-75">
+          {{ form.subject_1  }}
+          {{ form.subject_2  }}
+          {{ form.subject_3  }}
+          {{ form.subject_4  }}
+          {{ form.subject_5  }}
+          {{ form.subject_6  }}
+          {{ form.subject_7  }}
+          {{ form.subject_8  }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+       <label for="fname">Tuesday</label>
+         </div>
+       <div class="col-75">
+         {{ form.subject_9   }}
+         {{ form.subject_10  }}
+         {{ form.subject_11  }}
+         {{ form.subject_12  }}
+         {{ form.subject_13  }}
+         {{ form.subject_14  }}
+         {{ form.subject_15  }}
+         {{ form.subject_16  }}
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-25">
+      <label for="fname">Wednesday</label>
+        </div>
+      <div class="col-75">
+        {{ form.subject_17  }}
+        {{ form.subject_18  }}
+        {{ form.subject_19  }}
+        {{ form.subject_20  }}
+        {{ form.subject_21  }}
+        {{ form.subject_22  }}
+        {{ form.subject_23  }}
+        {{ form.subject_24  }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="fname">Thrusday</label>
+       </div>
+     <div class="col-75">
+       {{ form.subject_25  }}
+       {{ form.subject_26  }}
+       {{ form.subject_27  }}
+       {{ form.subject_28  }}
+       {{ form.subject_29  }}
+       {{ form.subject_30  }}
+       {{ form.subject_31  }}
+       {{ form.subject_32  }}
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="fname">Friday</label>
+       </div>
+     <div class="col-75">
+       {{ form.subject_33  }}
+       {{ form.subject_34  }}
+       {{ form.subject_35  }}
+       {{ form.subject_36  }}
+       {{ form.subject_37  }}
+       {{ form.subject_38  }}
+       {{ form.subject_39  }}
+       {{ form.subject_40  }}
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="fname">Saturday</label>
+       </div>
+     <div class="col-75">
+       {{ form.subject_41 }}
+       {{ form.subject_42 }}
+       {{ form.subject_43 }}
+       {{ form.subject_44 }}
+       {{ form.subject_45 }}
+       {{ form.subject_46 }}
+       {{ form.subject_47 }}
+       {{ form.subject_48 }}
+   </div>
+  </div><br>
+  <div class="row">
+       <input type="submit" value="Submit">
+     </div>
+  </form>
+
+</div>
+
+{% endblock %}

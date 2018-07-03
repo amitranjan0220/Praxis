@@ -1,0 +1,25 @@
+{% extends 'school_base.html' %}
+{% block title %}List of student{% endblock %}
+{% block header %}List of student{% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <h4>Class -{{ class }}</h4>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Roll No.</th>
+      <th>Edit</th>
+      <th>Message</th>
+    </tr>
+        {% for list in list %}
+    <tr>
+      <td>{{ list.user.get_full_name}}</td>
+      <td>{{ list.roll_no}}</td>
+      <td><a href="{% url 'edit' list.id %}">Edit</a></td>
+      <td><a href="{% url 'msg' list.id %}">Send</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

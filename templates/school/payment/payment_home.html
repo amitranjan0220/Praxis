@@ -1,0 +1,16 @@
+{% extends 'school_base.html' %}
+{% block title %}Account {% endblock %}
+{% block header %} Account {% endblock %}
+{% block content %}
+<br><br><br>
+<div class="table-box">
+  <table>
+    <tr>
+      <td><a href="{% url 'school_deposit_fees' %}">Deposit Fees</a></td><br>
+    </tr>
+    <tr>
+        <td><a href="{% url 'school_manage_fees' %}">Manage Fees</a></td>
+    </tr>
+  </table>
+</div>
+{% endblock %}
